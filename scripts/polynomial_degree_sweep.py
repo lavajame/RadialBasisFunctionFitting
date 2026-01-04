@@ -8,12 +8,14 @@ and creates high-quality visualization of fit quality.
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-from rbf_polynomial_fitter import RBFPolynomialFitter
+from sys import path
+path.insert(0, '..')
+from src.rbf_polynomial_fitter import RBFPolynomialFitter
 import warnings
 warnings.filterwarnings('ignore')
 
 # Load and normalize data
-data = np.genfromtxt('samples.csv', delimiter=',', skip_header=1)
+data = np.genfromtxt('../data/samples.csv', delimiter=',', skip_header=1)
 X = data[:, :5]
 f = data[:, 5]
 grads = data[:, 6:11]

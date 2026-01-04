@@ -4,13 +4,15 @@ Test polynomial degrees 0-5 with varying LHS centers 1-25.
 """
 
 import numpy as np
-from rbf_polynomial_fitter import RBFPolynomialFitter
+from sys import path
+path.insert(0, '..')
+from src.rbf_polynomial_fitter import RBFPolynomialFitter
 import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings('ignore')
 
 # Load and normalize data
-data = np.genfromtxt('samples.csv', delimiter=',', skip_header=1)
+data = np.genfromtxt('../data/samples.csv', delimiter=',', skip_header=1)
 X = data[:, :5]
 f = data[:, 5]
 grads = data[:, 6:11]
